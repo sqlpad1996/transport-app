@@ -34,18 +34,18 @@ const Departures = () => {
       {loading ? (
         <p className="text-lg text-gray-500">Loading...</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl">
-          {/* LEFT COLUMN - BROADWAY */}
-          <div>
-            <h3 className="text-center text-lg font-semibold text-blue-600 mb-2 md:mb-4">Towards Broadway</h3>
+        <div className="w-full max-w-5xl grid grid-cols-2 gap-6">
+          {/* LEFT COLUMN - COOGEE */}
+          <div className="w-full">
+            <h3 className="text-center text-lg font-semibold text-green-600 mb-2">Towards Coogee</h3>
             <div className="space-y-3">
-              {departures.Broadway.map((departure, index) => (
+              {departures.Coogee.map((departure, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-md rounded-lg p-3 flex justify-between items-center border-l-4 border-blue-500 hover:shadow-lg transition-all duration-300"
+                  className="bg-white shadow-md rounded-lg p-3 flex justify-between items-center border-l-4 border-green-500 hover:shadow-lg transition-all duration-300"
                 >
                   <div className="flex items-center space-x-2">
-                    <span className="text-2xl md:text-4xl font-bold text-blue-600">{getTimeDifference(departure.departureTime)}</span>
+                    <span className="text-2xl md:text-4xl font-bold text-green-600">{getTimeDifference(departure.departureTime)}</span>
                     <span className="text-gray-500 text-sm">min</span>
                   </div>
                   <span className="text-lg font-semibold text-gray-800">
@@ -56,17 +56,17 @@ const Departures = () => {
             </div>
           </div>
 
-          {/* RIGHT COLUMN - COOGEE */}
-          <div>
-            <h3 className="text-center text-lg font-semibold text-green-600 mb-2 md:mb-4">Towards Coogee</h3>
+          {/* RIGHT COLUMN - BROADWAY */}
+          <div className="w-full">
+            <h3 className="text-center text-lg font-semibold text-blue-600 mb-2">Towards Broadway</h3>
             <div className="space-y-3">
-              {departures.Coogee.map((departure, index) => (
+              {departures.Broadway.map((departure, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-md rounded-lg p-3 flex justify-between items-center border-l-4 border-green-500 hover:shadow-lg transition-all duration-300"
+                  className="bg-white shadow-md rounded-lg p-3 flex justify-between items-center border-l-4 border-blue-500 hover:shadow-lg transition-all duration-300"
                 >
                   <div className="flex items-center space-x-2">
-                    <span className="text-2xl md:text-4xl font-bold text-green-600">{getTimeDifference(departure.departureTime)}</span>
+                    <span className="text-2xl md:text-4xl font-bold text-blue-600">{getTimeDifference(departure.departureTime)}</span>
                     <span className="text-gray-500 text-sm">min</span>
                   </div>
                   <span className="text-lg font-semibold text-gray-800">
