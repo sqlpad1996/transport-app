@@ -29,26 +29,27 @@ const Departures = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-100 p-4">
-      <h2 className="text-3xl font-bold text-gray-800 mb-4">Next Departures</h2>
+    <div className="min-h-screen flex flex-col items-center bg-gradient-to-br from-gray-100 to-gray-200 p-6">
+      <h2 className="text-4xl font-extrabold text-gray-900 mb-6 text-center tracking-wide">🚍 Next Departures</h2>
+
       {loading ? (
-        <p className="text-lg text-gray-500">Loading...</p>
+        <p className="text-lg text-gray-500 animate-pulse">Fetching live departures...</p>
       ) : (
-        <div className="w-full max-w-5xl grid grid-cols-2 gap-6">
+        <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* LEFT COLUMN - COOGEE */}
           <div className="w-full">
-            <h3 className="text-center text-lg font-semibold text-green-600 mb-2">Towards Coogee</h3>
-            <div className="space-y-3">
+            <h3 className="text-center text-lg font-semibold text-green-700 mb-4 uppercase tracking-wider">➡️ Towards Coogee</h3>
+            <div className="space-y-4">
               {departures.Coogee.map((departure, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-md rounded-lg p-3 flex justify-between items-center border-l-4 border-green-500 hover:shadow-lg transition-all duration-300"
+                  className="bg-white shadow-md rounded-xl p-4 flex justify-between items-center border-l-8 border-green-500 transition-all duration-300 hover:shadow-xl hover:scale-105"
                 >
-                  <div className="flex items-center space-x-2">
-                    <span className="text-2xl md:text-4xl font-bold text-green-600">{getTimeDifference(departure.departureTime)}</span>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-3xl font-bold text-green-600">{getTimeDifference(departure.departureTime)}</span>
                     <span className="text-gray-500 text-sm">min</span>
                   </div>
-                  <span className="text-lg font-semibold text-gray-800">
+                  <span className="text-lg font-semibold text-gray-900">
                     {new Date(departure.departureTime).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                   </span>
                 </div>
@@ -58,18 +59,18 @@ const Departures = () => {
 
           {/* RIGHT COLUMN - BROADWAY */}
           <div className="w-full">
-            <h3 className="text-center text-lg font-semibold text-blue-600 mb-2">Towards Broadway</h3>
-            <div className="space-y-3">
+            <h3 className="text-center text-lg font-semibold text-blue-700 mb-4 uppercase tracking-wider">➡️ Towards Broadway</h3>
+            <div className="space-y-4">
               {departures.Broadway.map((departure, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-md rounded-lg p-3 flex justify-between items-center border-l-4 border-blue-500 hover:shadow-lg transition-all duration-300"
+                  className="bg-white shadow-md rounded-xl p-4 flex justify-between items-center border-l-8 border-blue-500 transition-all duration-300 hover:shadow-xl hover:scale-105"
                 >
-                  <div className="flex items-center space-x-2">
-                    <span className="text-2xl md:text-4xl font-bold text-blue-600">{getTimeDifference(departure.departureTime)}</span>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-3xl font-bold text-blue-600">{getTimeDifference(departure.departureTime)}</span>
                     <span className="text-gray-500 text-sm">min</span>
                   </div>
-                  <span className="text-lg font-semibold text-gray-800">
+                  <span className="text-lg font-semibold text-gray-900">
                     {new Date(departure.departureTime).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                   </span>
                 </div>
