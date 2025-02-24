@@ -13,7 +13,7 @@ const Departures = () => {
 
   const fetchDepartures = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/departures");
+      const response = await axios.get("https://transport-app-i72g.onrender.com/api/departures");
       setDepartures(response.data);
       setLoading(false);
     } catch (error) {
