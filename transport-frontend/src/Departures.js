@@ -14,7 +14,10 @@ const Departures = () => {
   const fetchDepartures = async () => {
     try {
       const response = await axios.get("https://transport-app-i72g.onrender.com/api/departures");
-      setDepartures(response.data);
+      setDepartures({
+        Broadway: response.data.Broadway.slice(0, 5), // Only next 5
+        Coogee: response.data.Coogee.slice(0, 5) // Only next 5
+      });
       setLoading(false);
     } catch (error) {
       console.error("Error fetching departures:", error);
