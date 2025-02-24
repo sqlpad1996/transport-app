@@ -35,15 +35,15 @@ const Departures = () => {
       {loading ? (
         <p className="text-lg text-gray-500 animate-pulse">Fetching live departures...</p>
       ) : (
-        <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="w-full max-w-6xl flex flex-col md:flex-row gap-6">
           {/* LEFT COLUMN - COOGEE (BLUE) */}
-          <div className="w-full">
+          <div className="w-full md:w-1/2">
             <h3 className="text-center text-lg font-semibold text-blue-700 mb-4 uppercase tracking-wider">➡️ Towards Coogee</h3>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {departures.Coogee.map((departure, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-md rounded-xl p-4 flex justify-between items-center border-l-8 border-blue-500 transition-all duration-300 hover:shadow-xl hover:scale-105"
+                  className="bg-white shadow-lg rounded-xl p-4 flex justify-between items-center border-l-8 border-blue-500 transition-all duration-300 hover:shadow-xl hover:scale-105"
                 >
                   <div className="flex items-center space-x-3">
                     <span className="text-3xl font-bold text-blue-600">{getTimeDifference(departure.departureTime)}</span>
@@ -58,13 +58,13 @@ const Departures = () => {
           </div>
 
           {/* RIGHT COLUMN - BROADWAY (GREEN) */}
-          <div className="w-full">
+          <div className="w-full md:w-1/2">
             <h3 className="text-center text-lg font-semibold text-green-700 mb-4 uppercase tracking-wider">➡️ Towards Broadway</h3>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {departures.Broadway.map((departure, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-md rounded-xl p-4 flex justify-between items-center border-l-8 border-green-500 transition-all duration-300 hover:shadow-xl hover:scale-105"
+                  className="bg-white shadow-lg rounded-xl p-4 flex justify-between items-center border-l-8 border-green-500 transition-all duration-300 hover:shadow-xl hover:scale-105"
                 >
                   <div className="flex items-center space-x-3">
                     <span className="text-3xl font-bold text-green-600">{getTimeDifference(departure.departureTime)}</span>
